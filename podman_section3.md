@@ -1,4 +1,3 @@
-```markdown
 # Podman Lernmaterial
 
 ---
@@ -192,4 +191,3 @@ podman run --rm redis:alpine redis-server --version
 > Überprüfen Sie mit `podman images` erneut. `my-webserver-image:v1.0` sollte weg sein, aber `httpd:alpine` ist noch da.
 >
 > Tagging ist essenziell für die Versionierung und Organisation Ihrer Images.
-```
