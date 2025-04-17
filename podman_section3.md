@@ -24,6 +24,8 @@ Führt Befehl in laufendem Container aus.
 
 **Syntax:** `podman exec [OPTIONS] CONTAINER_NAME|ID COMMAND [ARG...]`
 
+---
+
 > ##### Exercise 1: Using `exec`
 >
 > Starten Sie `my-web-server` (`podman start my-web-server`) und prüfen Sie die Apache-Version *innerhalb* des Containers:
@@ -35,7 +37,9 @@ Führt Befehl in laufendem Container aus.
 > podman exec my-web-server env
 > ```
 
-##### Pulling Common Images (Example)
+---
+
+#### Pulling Common Images (Example)
 Holen Sie sich Beispiele.
 
 **Syntax:** `podman pull [OPTIONS] [REGISTRY/]REPOSITORY[:TAG|@DIGEST]`
@@ -61,6 +65,8 @@ podman run --rm redis:alpine redis-server --version
 > *   Debugging (Shell in Image starten).
 >
 > Verwenden Sie `--rm`, wann immer ein Container nur temporär benötigt wird.
+
+---
 
 > ##### Exercise 2: Container Image Management & Basic Diagnostics
 >
@@ -144,6 +150,8 @@ podman run --rm redis:alpine redis-server --version
 > *   Troubleshooting Workflow.
 > *   Rootless Considerations (`stats`).
 
+---
+
 > ##### Exercise 3: Tagging an Existing Image (`podman tag`)
 >
 > Tags sind menschenlesbare Bezeichner für spezifische Versionen eines Images (z.B. `:latest`, `:3.18`, `:stable`). Sie können einem vorhandenen Image zusätzliche Tags zuweisen, z.B. um es für eine bestimmte Umgebung zu kennzeichnen oder bevor Sie es in eine andere Registry pushen.
@@ -191,3 +199,5 @@ podman run --rm redis:alpine redis-server --version
 > Überprüfen Sie mit `podman images` erneut. `my-webserver-image:v1.0` sollte weg sein, aber `httpd:alpine` ist noch da.
 >
 > Tagging ist essenziell für die Versionierung und Organisation Ihrer Images.
+
+---
