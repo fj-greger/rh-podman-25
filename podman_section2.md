@@ -16,6 +16,8 @@ Applikationen in Containern, die Isolation, Portability, Consistency bieten (Web
 
 Podman bietet Commands zur Kontrolle laufender Container (Status, Logs, Start/Stop/Restart, Remove) ohne Daemon.
 
+---
+
 > ##### Exercise 1: Managing a Running Service
 >
 > Wir verwenden den `my-web-server` (Port 8080) aus Abschnitt 1.
@@ -145,6 +147,8 @@ Podman bietet Commands zur Kontrolle laufender Container (Status, Logs, Start/St
 > *   Core Commands: `ps`, `inspect`, `logs`, `stop`, `start`, `restart`, `rm`.
 > *   Multiple Instances: Via Namen & Host-Ports.
 
+---
+
 > ##### Exercise 2: Viewing Processes Inside a Container (`podman top`)
 >
 > Manchmal möchten Sie sehen, welche Prozesse *innerhalb* eines laufenden Containers aktiv sind, ohne eine Shell mit `podman exec` starten zu müssen. Der Befehl `podman top` bietet hierfür eine schnelle Übersicht.
@@ -175,6 +179,8 @@ Podman bietet Commands zur Kontrolle laufender Container (Status, Logs, Start/St
 > > **Tipp:** Sie können auch Optionen übergeben, die der `top`-Befehl selbst versteht (abhängig vom `top`-Programm im Container-Image), z.B. `podman top my-web-server -aux` für ein detaillierteres Format, falls das `ps`-Kommando im Container dies unterstützt.
 >
 > `podman top` ist nützlich für eine schnelle Diagnose, um zu überprüfen, ob der erwartete Hauptprozess läuft oder ob unerwartete Prozesse aktiv sind.
+
+---
 
 > ##### Exercise 3: Understanding Restart Policies
 >
@@ -237,3 +243,5 @@ Podman bietet Commands zur Kontrolle laufender Container (Status, Logs, Start/St
 > podman rm -f restart-test always-test
 > ```
 > Restart Policies sind fundamental, um die Verfügbarkeit von containerisierten Diensten sicherzustellen.
+
+---
