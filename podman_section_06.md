@@ -645,6 +645,15 @@ Mit `--share NAMESPACE` können auch andere Namespaces (`pid`, `ipc`, `uts`) get
 > # Note: With cgroup v2, these values might not reflect the actual enforced pod-level limits.
 > podman inspect ${INFRA_ID} | jq '.[0].HostConfig | {Memory: .Memory, NanoCpus: .NanoCpus, CpuQuota: .CpuQuota, CpuPeriod: .CpuPeriod}'
 > ```
+> Falls der obere Befehl fehlschlägt, hier die Variante 2:
+> ```bash
+> # Find the ID of the pod's infra container
+> INFRA_ID=$(podman pod inspect limited-pod | jq -r '.InfraContainerID')
+>
+> # Inspect the infra container's configuration
+> # Note: With cgroup v2, these values might not reflect the actual enforced pod-level limits.
+> podman inspect ${INFRA_ID} | jq '.[0].HostConfig | {Memory: .Memory, NanoCpus: .NanoCpus, CpuQuota: .CpuQuota, CpuPeriod: .CpuPeriod}'
+> ```
 > Die bevorzugte Methode zur Überwachung der Ressourcennutzung im Verhältnis zu den Pod-Limits ist `podman pod stats`.
 >
 > > **Wichtiger Hinweis zu `podman pod stats` und cgroup v2:**
