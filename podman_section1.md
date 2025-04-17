@@ -63,6 +63,8 @@ Podman ist eine OCI-kompatible Container Engine zum Entwickeln, Managen und Ausf
 
 **Wie funktioniert "Daemonless"?** Im Gegensatz zu Docker, das ein Client-Server-Modell verwendet (die `docker` CLI kommuniziert mit einem ständig laufenden Docker-Daemon, der die Container verwaltet), nutzt Podman ein traditionelles Fork/Exec-Modell, ähnlich wie andere Linux-Befehle. Wenn Sie `podman run` ausführen, startet Podman direkt die Container-Laufzeitumgebung (wie `crun` oder `runc`) als Kindprozess. Es gibt keinen zentralen Prozess, der ständig im Hintergrund laufen muss. Dies reduziert den Ressourcenverbrauch, eliminiert einen potenziellen Single Point of Failure und ermöglicht eine bessere Integration mit Systemd für die Verwaltung von Container-Lebenszyklen.
 
+---
+
 > ##### Exercise 1: Running Your First Containers
 >
 > Jetzt wird's praktisch!
@@ -140,13 +142,15 @@ Podman ist eine OCI-kompatible Container Engine zum Entwickeln, Managen und Ausf
 > > *   Temporäre Container entfernen (`--rm`).
 > > *   Rootless verwenden.
 > > *   Spezifische Image Tags verwenden (`httpd:alpine` statt `httpd`).
+>
+> ### Key Takeaways
+>
+> *   Container: Lightweight, portable Softwarepakete.
+> *   Podman: Daemonless, Rootless-fokussierte Container Engine.
+> *   `podman run`: Startet Container (`-d`, `-p`, `--name`, `-it`, `--rm`).
+> *   Images: Vorlagen (`REPOSITORY:TAG`).
 
-### Key Takeaways
-
-*   Container: Lightweight, portable Softwarepakete.
-*   Podman: Daemonless, Rootless-fokussierte Container Engine.
-*   `podman run`: Startet Container (`-d`, `-p`, `--name`, `-it`, `--rm`).
-*   Images: Vorlagen (`REPOSITORY:TAG`).
+---
 
 > ##### Exercise 2: Finding and Pulling an Image
 >
@@ -191,6 +195,8 @@ Podman ist eine OCI-kompatible Container Engine zum Entwickeln, Managen und Ausf
 > ```
 > **Result:** Sie sollten das `alpine` Image mit dem Tag `latest` in der Liste Ihrer lokalen Images sehen.
 
+---
+
 > ##### Exercise 3: Running a Simple Command Container
 >
 > Nicht jeder Container muss ein langlebiger Dienst wie ein Webserver sein. Sie können Container auch verwenden, um schnell einen einzelnen Befehl in einer isolierten Umgebung auszuführen.
@@ -222,6 +228,8 @@ Podman ist eine OCI-kompatible Container Engine zum Entwickeln, Managen und Ausf
 > **Result:** Sie sehen eine Liste der Standard-Umgebungsvariablen, die im Alpine-Container gesetzt sind (z.B. `PATH`, `HOSTNAME`).
 >
 > Diese Art von "Wegwerf"-Containern ist nützlich, um Tools auszuführen, die Sie nicht auf Ihrem Host installieren möchten, oder um schnell etwas in einer sauberen Umgebung zu testen.
+
+---
 
 > ##### Exercise 4: Removing a Stopped Container
 >
@@ -277,3 +285,5 @@ Podman ist eine OCI-kompatible Container Engine zum Entwickeln, Managen und Ausf
 > **Result:** Der Container `temp-alpine` sollte nun nicht mehr in der Liste erscheinen.
 >
 > Das manuelle Entfernen ist wichtig, um Speicherplatz freizugeben und die Liste der Container übersichtlich zu halten.
+
+---
