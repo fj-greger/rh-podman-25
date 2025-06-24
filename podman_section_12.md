@@ -359,7 +359,12 @@ Zusätzlich zu den in den Übungen gezeigten Aktionen gibt es weitere :
 *  **delete** Images 
 * **login** to a registry
 ```bash
-skopeo login -u admin -p p0dman4Dev0ps# --tls-verify=false localhost:500
+skopeo login -u admin -p p0dman4Dev0ps# --tls-verify=false localhost:5000
+```
+
+* **check** image in registry
+```bash
+skopeo list-tags --tls-verify=false docker://localhost:5000/myproject/ubuntu
 ```
 
 
