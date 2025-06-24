@@ -8,10 +8,16 @@
 
 
 
-#### registries,conf
+#### registries.conf
 
 * zentral, systemweit : /etc/containers/registries.conf
 * User bezogen: $HOME/.config/containers/registries.conf
+
+Liste an registries, welche podman search nutzt: 
+
+```bash
+unqualified-search-registries = ["registry.fedoraproject.org", "registry.access.redhat.com", "docker.io", "quay.io" ]
+```
 
 ---
 
