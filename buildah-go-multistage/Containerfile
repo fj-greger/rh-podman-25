@@ -1,0 +1,8 @@
+FROM golang:1.20 as builder
+WORKDIR /app
+COPY main.go .
+RUN go build -o myapp main.go
+
+FROM ubuntu:22.04
+COPY --from=builder /app/myapp /usr/local/bin/myapp
+CMD ["myapp"]
