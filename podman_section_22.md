@@ -29,9 +29,9 @@ Auf lokalen Rechnern kann auf die Schnelle ungenutzte Ressourcen frei geräumt w
 
  * container
    * alle Pods stoppen und löschen
-     * podman stop $(podman ps -qa)
-   * auf löschen
-     * podman rm $(podman container ls -qa)
+     * podman stop $(podman ps -q)
+   * und löschen
+     * podman rm $(podman ps -qa)
      * podman container prune # ungenutzte Container aufräumen
  
  * images
